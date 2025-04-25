@@ -1,5 +1,7 @@
 # MEDS TRAINING
 
+![MEDS](https://avatars.githubusercontent.com/u/166413978?s=200&v=4)
+
 ## MODULE 0
 
 ### Completed Tasks :
