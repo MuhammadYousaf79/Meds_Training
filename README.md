@@ -6,7 +6,7 @@
 
 ## MODULE 0
 
-### :tick Completed Tasks :
+### Completed Tasks :
 
 - [x] Bash Scripting  
 - [x] VIM Editor  
