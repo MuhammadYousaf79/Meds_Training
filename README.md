@@ -8,7 +8,7 @@
 
 ### Completed Tasks :
 
-1. Bash Scripting
-2. VIM Editor
-3. Vscode with git and VIM
-4. GIT and Github
+- [x] Bash Scripting  
+- [x] VIM Editor  
+- [x] VSCode with Git and VIM  
+- [x] GIT and GitHub  
