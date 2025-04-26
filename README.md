@@ -12,3 +12,5 @@
 - [x] VIM Editor  
 - [x] VSCode with Git and VIM  
 - [x] GIT and GitHub  
+
+Bash shell scrtipting tutorial on mini file manger in ```module_0``` directory
