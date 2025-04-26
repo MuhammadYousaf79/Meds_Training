@@ -1,6 +1,4 @@
-# MEDS Training
-
-## **BASH SCRIPT TUTORIAL** 
+# **BASH SCRIPT TUTORIAL** 
 
 ### Overview
 
