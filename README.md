@@ -14,3 +14,13 @@
 - [x] GIT and GitHub  
 
 Bash shell scrtipting tutorial on mini file manger in ```module_0``` directory
+
+## MODULE 1
+
+### Completed Tasks :
+
+- [x] Markdown Files
+- [x] Makefiles
+- [x] Verillator
+- [x] GTKwave
+- [x] C++
