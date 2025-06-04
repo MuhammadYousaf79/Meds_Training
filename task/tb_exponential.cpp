@@ -19,8 +19,7 @@ int main(int argc, char** argv) {
         {0.5, std::exp(0.5)}, // e^0.5 ≈ 1.64872
         {3.0, std::exp(3.0)}  // e^3 ≈ 20.0855
     };
-    
-    printf("Testing exponential module with %d iterations:\n", dut->ITERATIONS);
+
     printf("%-10s %-15s %-15s %-10s\n", "Input", "Expected", "Actual", "Error(%)");
     printf("------------------------------------------------\n");
     

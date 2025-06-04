@@ -5,10 +5,9 @@ module sqrt (
 
 	real guess;
 	real epsilon = 0.00001;
-	real r_number;
+	real r_number = number;
 
 	always_comb begin
-		r_number = number;
 		
 		guess = r_number / 2;
 		

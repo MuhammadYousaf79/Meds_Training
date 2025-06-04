@@ -1,6 +1,4 @@
-module exponential #(
-  parameter int ITERATIONS = 10,
-)(
+module exponential (
   input real X,
   output real result
 );
@@ -8,8 +6,9 @@ module exponential #(
   real sum;
   real term;
   int n;
+  int ITERATIONS = 10;
   
-  initial begin
+  always_comb begin
     sum = 1.0;
     term = 1.0;
     
@@ -19,7 +18,6 @@ module exponential #(
     end
     
     result = sum;
-    $display("exp(%f) ≈ %f (using %0d Taylor terms)", X, result, ITERATIONS);
+    $display("exp(%f) ≈ %f", X, result);
   end
-  
 endmodule
