@@ -171,12 +171,10 @@ C_{out} \\
 $$
 
 Functions:
-$$
-\begin{aligned}
-S &= A \oplus B \oplus C_{in} \quad &\text{(3-input XOR)} \\
-C_{out} &= AB + AC_{in} + BC_{in} \quad &\text{(3-input majority)}
-\end{aligned}
-$$
+<pre>
+  S = A ⊕ B ⊕ Cin  (3-input XOR)
+  Cout = AB + ACin + BCin  (3-input majority)
+</pre>
 
 --------------------------------------------------------------
 ## Boolean Axioms
@@ -204,19 +202,19 @@ $$
 ## General Concepts
 
 - **Complement**: variable with a bar over it  
-  $$ \overline{A}, \overline{B}, \overline{C} $$
+  - A̅, B̅, C̅
 
 - **Literal**: variable or its complement  
-  $$ A, \overline{A}, B, \overline{B}, C, \overline{C} $$
+  - A, A̅, B, B̅, C, C̅
 
 - **Implicant**: product (AND) of literals  
-  $$ (A \cdot B \cdot \overline{C}), (\overline{A} \cdot C), (B \cdot \overline{C}) $$
+  - (A · B · C̅), (A̅ · C), (B · C̅)
 
 - **Minterm**: product (AND) that includes **all** input variables  
-  $$ (A \cdot B \cdot \overline{C}), (\overline{A} \cdot \overline{B} \cdot C), (\overline{A} \cdot B \cdot \overline{C}) $$
+  - (A · B · C̅), (A̅ · B̅ · C), (A̅ · B · C̅)
 
 - **Maxterm**: sum (OR) that includes **all** input variables  
-  $$ (A + \overline{B} + \overline{C}), (\overline{A} + B + \overline{C}), (A + B + \overline{C}) $$
+  - (A + B̅ + C̅), (A̅ + B + C̅), (A + B + C̅)
 
 ## SOP: SUM of PRODUCT Form
 
