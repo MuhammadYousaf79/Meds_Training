@@ -349,3 +349,210 @@ $$
 - \( carry_i \): Input carry
 - \( carry_{i+1} \): Output carry
 - \( S_i \): Sum bit
+
+----------------------------------------------------------------------------
+# LECTURE 3
+# SEQUENTIAL LOGIC
+
+## COMPARATOR (EQUALITY)
+
+Checks if two N inputs are exactly the same 
+
+<div align="center">
+  <img src="./comparator.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+## TRI-STATE BUFFER
+
+A tri-state buffer enables gating of different signals on a wire.
+
+<div align="center">
+  <img src="./tris.jpg" alt="Lecture 3 Diagram">
+    <p>where Z is the floating signal</p>
+  </img>
+</div>
+
+
+### Example of tri-state buffer
+
+<div align="center">
+  <img src="./triexa.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+### Uniting Therom
+<div align="center">
+  <img src="./uni.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+## SEQUENTIAL CIRCUITS
+Sequential circuits depends on the currnet input as well as the previous inputs also i.e htey have memory element present in them.
+
+<div align="center">
+  <img src="./seq.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+## Capturing Data
+
+### The R-S (Reset-Set) Latch
+
+- **Cross-coupled NAND gates**
+  - Data is stored at **Q** (inverse at **Q'**)
+  - **S** and **R** are control inputs
+    - In *quiescent (idle)* state, both **S** and **R** are held at 1
+    - **S (set)**: drive **S** to 0 (keeping **R** at 1) to change **Q** to 1
+    - **R (reset)**: drive **R** to 0 (keeping **S** at 1) to change **Q** to 0
+    - **S** and **R** should never both be 0 at the same time
+
+<div align="center">
+  <img src="./crs.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+### D-LATCH
+
+<div align="center">
+  <img src="./dlat.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+### REGISTER
+Register store data.They are made up of D-Latches to store data
+
+To store more than 1 bit of data use more than 1 D-Latch in parallel wit each other.
+
+<div align="center">
+  <img src="./regi.jpg" alt="Lecture 3 Diagram" />
+</div>
+
+where D3 is the MSB and D0 is the LSB
+
+Memory uses the regiters so to store or read from a specific register in memory we have addresses to that register.
+
+## FLIP FLOP
+
+A flip flop is a combination of 2 D-Latches that operate with a clock either on the rising edge or the falling edge.
+
+One of the 2 D-Latches acts as the transparent latch and the other stores the data.
+
+----------------------------------------------------------------------------
+
+# LECTURE 4 
+
+## FINITE STATE MACHINE
+
+# Introduction to Finite State Machines (FSM)
+
+A **Finite State Machine (FSM)** is a computational model used to design both computer programs and sequential logic circuits. It consists of a finite number of **states**, **transitions** between those states, and **inputs** that trigger the transitions.
+
+FSMs are widely used in digital systems for control logic. The system is always in one of the states, and based on the input, it may transition to another state. There are two main types of FSMs:
+
+- **Moore Machine** – Output depends only on the current state.
+- **Mealy Machine** – Output depends on both the current state and the input.
+
+FSMs are commonly used in applications such as vending machines, traffic light controllers, and communication protocols.
+
+<div align="center">
+  <img src="./fsm.jpg" alt="Lecture 4 Diagram" />
+</div>
+
+
+## Mealy and Moore Machines
+
+### Moore Machine
+In a **Moore machine**, the output depends **only on the current state**. This means the output is updated only when the system transitions to a new state.
+
+**Characteristics:**
+- Output is stable and changes only when the state changes.
+- Typically requires more states than a Mealy machine for the same functionality.
+- Easier to design and debug due to output-state separation.
+
+**Example Use Case:** Traffic light controllers.
+
+### Mealy Machine
+In a **Mealy machine**, the output depends on **both the current state and the input**. This means the output can change in the middle of a state based on input changes.
+
+**Characteristics:**
+- Can react faster to inputs since outputs can change without waiting for a state change.
+- Usually requires fewer states than a Moore machine for the same functionality.
+- More complex to design and test.
+
+**Example Use Case:** Serial data transmitters or receivers, where output must immediately reflect input changes.
+
+## FSM State Encoding
+
+**State encoding** is the process of assigning binary values (codes) to the states in a Finite State Machine (FSM). It is an important step in implementing FSMs in hardware, especially using flip-flops and logic gates.
+
+There are several common state encoding methods:
+
+### 1. Binary Encoding
+Each state is assigned a unique binary number using the minimum number of bits.
+
+- **Advantages:** Uses fewer flip-flops (minimum hardware).
+- **Disadvantages:** Can result in more complex logic circuits for state transitions and outputs.
+
+### 2. One-Hot Encoding
+Each state is represented by a flip-flop, and only one flip-flop (bit) is '1' (hot) at a time.
+
+- **Advantages:** Simplifies next-state and output logic.
+- **Disadvantages:** Requires more flip-flops (one per state).
+
+### 3. Gray Encoding
+States are encoded such that only one bit changes between successive states.
+
+- **Advantages:** Reduces transition glitches in noisy environments.
+- **Disadvantages:** Not as commonly used in FSMs; more suited for counters.
+
+**Choosing an encoding scheme** depends on trade-offs between logic complexity, speed, power, and available resources.
+
+## FSM Output Encoding
+
+**Output encoding** defines how the outputs of the FSM are generated based on its states and/or inputs. The method used depends on whether the FSM is a Moore or Mealy machine.
+
+### 1. Moore Output Encoding
+- Outputs are associated **only with states**.
+- Each state has a fixed output value.
+- Outputs change only when the FSM transitions to a different state.
+- Easier to debug and more stable.
+
+### 2. Mealy Output Encoding
+- Outputs are associated with **state-input pairs**.
+- Outputs can change immediately in response to input changes, even without a state transition.
+- Can result in fewer states compared to Moore machines, but may introduce glitches due to immediate response to inputs.
+
+**Note:** When implementing FSMs in digital systems, the output logic must be carefully designed to ensure correct timing and behavior of the circuit.
+
+# HARDWARE DESCRIPTIVE LANGUAGE
+
+- These are the language that enable easy description of hardware structure like:
+
+  - wires, gates, registers, flip flops, clock, rising/falling edge of clock
+  - combinational and sequential logic elements
+
+- Enables seamless expresion of parallelism inherent in hardware
+
+## HEIRARCHY LEVEL OF MODULES
+
+## Top-Down Design Methodology
+
+- We define the **top-level module** and identify the **sub-modules** necessary to build the top-level module.
+- Subdivide the sub-modules until we come to **leaf cells**.
+  - **Leaf cell**: Circuit components that cannot further be divided (e.g., *logic gates*, *primitive cell library elements*).
+
+### Module Hierarchy
+
+<div align="center">
+  <img src="./hercim.jpg" alt="Lecture 4 Diagram" />
+</div>
+
+## DEFINING MODULES
+
+A **module** is the building block in HDL
+
+We first define 
+- **Name** of the module
+- **Direction** of its ports(input , output)
+- **Name** of the ports
+
+<div align="center">
+  <img src="./mdefi.jpg" alt="Lecture 4 Diagram" />
+</div>
+
+----------------------------------------------------------------------------
